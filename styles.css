@@ -33,3 +33,34 @@ footer{border-top-color:#e0d0c2;color:#78666a}
 .footer-brand{color:var(--wine)}
 .brand-mark.small{background:var(--wine);color:var(--cream)}
 @media(max-width:600px){.hero{padding:32px 22px 30px;margin-top:18px;border-radius:17px}.hero:after{font-size:190px;right:0;bottom:-65px}.hero h1{font-size:42px}}
+
+
+/* Client-ready PDF export: uses the browser's Print / Save as PDF feature. */
+@page{size:A4;margin:14mm}
+@media print{
+  body,body.printing-shotlist{background:#fff!important;color:#24191b!important;font-size:11pt}
+  .topbar,.hero,#setupPanel,.recent-panel,footer,.workspace-head .outline-button,.progress-foot button,.toolbar button,.bottom-actions,.local-note,.toast,dialog{display:none!important}
+  main{max-width:none!important;padding:0!important;margin:0!important}
+  #workspace{display:block!important;margin:0!important}
+  .workspace-head{display:block!important;margin:0 0 12pt!important}
+  .workspace-head:before{content:"ZENTRIK DIGITAL  |  RESTAURANT CONTENT SHOOT";display:block;color:#780116;font:700 9pt Arial,sans-serif;letter-spacing:1.5pt;margin-bottom:12pt}
+  .workspace-head h2{font-size:24pt!important;color:#780116!important;margin:0 0 4pt!important}
+  .workspace-head .muted{font-size:10pt!important;color:#65575a!important}
+  .progress-card{box-shadow:none!important;border:1px solid #e5d5c8!important;padding:10pt!important;margin:10pt 0 14pt!important;break-inside:avoid}
+  .progress-track{height:5pt!important}
+  .progress-copy strong{font-size:13pt!important}
+  .toolbar{margin:12pt 0 8pt!important}
+  .toolbar h3{font-size:16pt!important}
+  .shot-group{border:1px solid #dfd1c8!important;border-radius:7pt!important;overflow:visible!important;margin:8pt 0!important;break-inside:avoid-page;background:#fff!important}
+  .group-head{background:#f5ebd0!important;padding:8pt 10pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .group-title{font-size:11pt!important;color:#780116!important}
+  .group-count{font-size:8pt!important}
+  .shot-row{padding:8pt 10pt!important;gap:8pt!important;break-inside:avoid;border-bottom:1px solid #eee!important}
+  .shot-check{width:12pt!important;height:12pt!important;accent-color:#780116!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .shot-title{font-size:10pt!important;color:#24191b!important;text-decoration:none!important}
+  .shot-instruction{font-size:9pt!important;color:#65575a!important;line-height:1.4!important;opacity:1!important}
+  .shot-tag{font-size:7pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .delete-shot{display:none!important}
+  .step-label{font-size:8pt!important;color:#780116!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
