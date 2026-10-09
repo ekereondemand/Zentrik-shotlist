@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#780116"><meta name="description" content="A practical restaurant video shoot checklist for Zentrik Digital."><title>Shotlist — Zentrik Digital</title>
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#" aria-label="Shotlist home"><span class="brand-mark">Z</span><span><strong>SHOTLIST</strong><small>by Zentrik Digital</small></span></a><button id="newShootTop" class="ghost-button" type="button">＋ New shoot</button></header>
+<main>
+<section class="hero"><div class="eyebrow"><span class="live-dot"></span> YOUR SHOOT, UNDER CONTROL</div><h1>Get the shots.<br><em>Tell the story.</em></h1><p>A simple, practical shot list for restaurant content shoots. Plan less on location. Capture more of what matters.</p></section>
+<section id="setupPanel" class="panel setup-panel"><div class="section-heading"><div><span class="step-label">01 / SET UP</span><h2>Start a shoot</h2></div><span class="panel-icon">↗</span></div>
+<form id="shootForm">
+<label for="restaurantName">Restaurant or brand name <span class="required">*</span></label><input id="restaurantName" name="restaurantName" placeholder="e.g. The Meal Barrel" maxlength="80" required>
+<div class="form-grid"><div><label for="restaurantType">Business type</label><select id="restaurantType"><option>Restaurant</option><option>Chinese restaurant</option><option>Fast food</option><option>Café</option><option>Bar or lounge</option><option>Bakery</option><option>Dessert brand</option><option>Food product</option><option>Other</option></select></div><div><label for="shootDate">Shoot date</label><input id="shootDate" type="date"></div></div>
+<label>What are you filming today?</label><div class="mode-grid" id="objectiveChoices"><label class="mode-card selected"><input type="checkbox" value="food" checked><span class="mode-icon">✳</span><span><b>Food & menu</b><small>Dishes, details, texture</small></span><span class="checkmark">✓</span></label><label class="mode-card selected"><input type="checkbox" value="space" checked><span class="mode-icon">⌂</span><span><b>Space & ambience</b><small>Exterior, interior, vibe</small></span><span class="checkmark">✓</span></label><label class="mode-card"><input type="checkbox" value="experience"><span class="mode-icon">♡</span><span><b>Customer experience</b><small>Serving, people, moments</small></span><span class="checkmark">✓</span></label><label class="mode-card"><input type="checkbox" value="promo"><span class="mode-icon">↗</span><span><b>Offer or promotion</b><small>Bundles, offer, CTA shots</small></span><span class="checkmark">✓</span></label><label class="mode-card"><input type="checkbox" value="story"><span class="mode-icon">✎</span><span><b>Brand story</b><small>People, process, details</small></span><span class="checkmark">✓</span></label><label class="mode-card"><input type="checkbox" value="challenge"><span class="mode-icon">⚡</span><span><b>Quick shoot challenge</b><small>A focused, shorter list</small></span><span class="checkmark">✓</span></label></div>
+<div class="form-actions"><button class="primary-button" type="submit">Build my shot list <span>→</span></button><p>Free to use · No account required</p></div>
+</form></section>
+<section id="workspace" class="workspace hidden">
+<div class="workspace-head"><div><span class="step-label">YOUR ACTIVE SHOOT</span><h2 id="projectTitle">Restaurant shoot</h2><p id="projectMeta" class="muted"></p></div><button id="editShoot" class="outline-button" type="button">Edit details</button></div>
+<div class="progress-card"><div class="progress-copy"><div><span class="step-label">SHOOT PROGRESS</span><strong id="progressNumbers">0 / 0 shots</strong></div><strong id="progressPercent">0%</strong></div><div class="progress-track"><span id="progressBar"></span></div><div class="progress-foot"><span id="remainingText">Let's get rolling.</span><button id="resetChecks" class="text-button" type="button">Reset checks</button></div></div>
+<div class="toolbar"><div><span class="step-label">SHOT CHECKLIST</span><h3>Capture every angle.</h3></div><button id="addShot" class="outline-button" type="button">＋ Add shot</button></div>
+<div id="shotGroups"></div>
+<div class="bottom-actions"><button id="exportBtn" class="secondary-button" type="button">↓ Export checklist</button><button id="finishBtn" class="primary-button" type="button">Finish shoot ✓</button></div>
+<p class="local-note">This prototype saves shoots on this device only. Export your checklist to keep a copy or share it with your team.</p>
+</section>
+<section id="recentPanel" class="recent-panel"><div class="section-heading"><div><span class="step-label">YOUR WORK</span><h2>Recent shoots</h2></div><button id="clearHistory" class="text-button" type="button">Clear history</button></div><div id="recentList" class="recent-list"></div></section>
+<footer><div class="footer-brand"><span class="brand-mark small">Z</span> ZENTRIK DIGITAL</div><span>Made for better restaurant content.</span><span class="version">MVP · v1.0</span></footer>
+</main>
+<dialog id="shotDialog"><form method="dialog" id="shotForm"><div class="dialog-head"><div><span class="step-label">CUSTOM SHOT</span><h2>Add a shot</h2></div><button class="close-button" value="cancel" aria-label="Close">×</button></div><label for="shotTitle">Shot name</label><input id="shotTitle" required maxlength="100" placeholder="e.g. Sauce drizzle close-up"><label for="shotInstruction">What to capture</label><textarea id="shotInstruction" rows="3" maxlength="400" placeholder="Describe the framing or action..."></textarea><label for="shotGroup">Section</label><select id="shotGroup"><option value="food">Food & menu</option><option value="space">Space & ambience</option><option value="experience">Customer experience</option><option value="promo">Offer or promotion</option><option value="story">Brand story</option><option value="general">General</option></select><div class="dialog-actions"><button class="secondary-button" value="cancel">Cancel</button><button id="saveShot" class="primary-button" value="save">Add to list</button></div></form></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body></html>
